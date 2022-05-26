@@ -1,0 +1,33 @@
+2022-05-20 16:47:01 Car_path: /home/caslx/HIK/opsService/deal/car/1653036354.car info:  command: lotus client deal --fast-retrieval=true --from=t1gaefbxfct24tfv4tck4lpbq3522sq7pb6odoiqq --manual-piece-cid=baga6ea4seaqnkbpfjixby2nlzwwggagq2eld45wj24tfefp73lnptb34epfmygq --manual-piece-size=4261681299 --manual-stateless-deal --verified-deal=false --start-epoch=986013 bafykbzaceafedwtp7zxjsfdeo2kfk3flbu32kmbpep3mcfa64vli7avu4iuse t036295 0 1468800
+2022-05-21 11:21:51 Car_path: /home/caslx/HIK/opsService/deal/car/1653103243.car info: Incorrect Usage: invalid value "" for flag -manual-piece-size: parse error
+
+NAME:
+   lotus client deal - Initialize storage deal with a miner
+
+USAGE:
+   lotus client deal [command options] [dataCid miner price duration]
+
+CATEGORY:
+   STORAGE
+
+DESCRIPTION:
+   Make a deal with a miner.
+dataCid comes from running 'lotus client import'.
+miner is the address of the miner you wish to make a deal with.
+price is measured in FIL/Epoch. Miners usually don't accept a bid
+lower than their advertised ask (which is in FIL/GiB/Epoch). You can check a miners listed price
+with 'lotus client query-ask <miner address>'.
+duration is how long the miner should store the data for, in blocks.
+The minimum value is 518400 (6 months).
+
+OPTIONS:
+   --manual-piece-cid value     manually specify piece commitment for data (dataCid must be to a car file)
+   --manual-piece-size value    if manually specifying piece cid, used to specify size (dataCid must be to a car file) (default: 0)
+   --manual-stateless-deal      instructs the node to send an offline deal without registering it with the deallist/fsm (default: false)
+   --from value                 specify address to fund the deal with
+   --start-epoch value          specify the epoch that the deal should start at (default: -1)
+   --fast-retrieval             indicates that data should be available for fast retrieval (default: true)
+   --verified-deal              indicate that the deal counts towards verified client total (default: true if client is verified, false otherwise)
+   --provider-collateral value  specify the requested provider collateral the miner should put up
+   --help, -h                   show help (default: false)
+    command: lotus client deal --fast-retrieval=true --from=t1gaefbxfct24tfv4tck4lpbq3522sq7pb6odoiqq --manual-piece-cid=baga6ea4seaqhr2mayoy463hfplrxu3diainhi6gjruavess5wiyi33yelsekgeq --manual-piece-size= --manual-stateless-deal --verified-deal=false --start-epoch=988243 bafykbzaceb6w2jq5x2s2gh6i62uj5x4eyfr4mbqiid44zw56lvbqpgazowadg t036295 0 1468800
