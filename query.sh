@@ -6,7 +6,7 @@ deal_log="$log_path/deal.log"
 input1=$1
 input2=$2
 Locate_file(){
-locate=`grep $1 $file_name_path/*|awk -F"/" '{print $NF}'|sed 's/:/    /'  2>/dev/null  `
+locate=`grep $1 $file_name_path/*|awk -F"/" '{print $NF}'|sed 's/:/    /'  2>/dev/null`
 if [ ! -n  "$locate" ];then
     echo -e "\033[31mError: file is not included in any deal.    Check input: \"$1\".\033[0m"
     exit
